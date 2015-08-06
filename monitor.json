@@ -1,28 +1,28 @@
-{"foo": 3}
-{"foo": 4}
-{"foo": 5}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 3}
-{"foo": 4}
-{"foo": 5}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 3}
-{"foo": 4}
-{"foo": 5}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 6}
-{"foo": 25}
+{"train_cost": 3}
+{"train_cost": 4}
+{"train_cost": 5}
+{"train_cost": 6, "valid_cost": 7}
+{"train_cost": 6}
+{"train_cost": 6}
+{"train_cost": 6}
+{"train_cost": 6, "valid_cost": 7}
+{"train_cost": 6, "valid_cost": 7}
+{"train_cost": 6}
+{"train_cost": 6}
+{"train_cost": 6}
+{"train_cost": 3, "valid_cost": 7}
+{"train_cost": 4, "valid_cost": 7}
+{"train_cost": 5, "valid_cost": 7}
+{"train_cost": 6}
+{"train_cost": 6}
+{"train_cost": 6}
+{"train_cost": 6, "valid_cost": 24}
+{"train_cost": 3, "valid_cost": 7}
+{"train_cost": 4}
+{"train_cost": 5, "valid_cost": 100}
+{"train_cost": 6, "valid_cost": 7}
+{"train_cost": 6}
+{"train_cost": 6, "valid_cost": 8}
+{"train_cost": 6, "valid_cost": 7}
+{"train_cost": 6, "valid_cost": 7}
+{"train_cost": 25, "valid_cost": 7}
