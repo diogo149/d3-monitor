@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.8.1/rivets.bundled.min.js"></script>
+    <style type="text/css">
+    svg {
+	font: 10px sans-serif;
+	shape-rendering: crispEdges;
+    }
+
+    /*     draw axis lines in white */
+    .axis path,
+    .axis line {
+	fill: none;
+	stroke: #fff;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="main-chart"></div>
+    <button onclick="loadMonitorData()">Refresh data</button>
+    <button onclick="refreshChart()">Refresh chart</button>
+    <div id="settings">
+      <h2>Settings</h2>
+      <div>
+	<select rv-value="settings.xScale">
+	  <option value="none">None</option>
+	  <option value="log">Log</option>
+	</select>
+	<label>x scale</label>
+      </div>
+      <div>
+	<input type="checkbox" rv-checked="settings.destroy">
+	<label>FIXME checkbox sample</label>
+      </div>
+      <div>
+	<input rv-value="settings.rollingMeanWindow">
+	<label>Rolling Mean Window</label>
+      </div>
+      <div>
+	<input rv-value="settings.refreshInterval">
+	<label>Refresh Interval (ms)</label>
+      </div>
+      <span rv-text="JSON.stringify(settings.keySettings)"></span>
+      <div rv-each-foo="settings.keySettings">
+	{foo.name}
+      </div>
+    </div>
+    <script type="text/javascript" src="monitor.js"></script>
+  </body>
+</html>
