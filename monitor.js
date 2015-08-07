@@ -9,6 +9,7 @@ var EPSILON = 1e-6;
 var defaultSettings = [
   {
     id: "chart-1",
+    onlyRelevantTooltipKeys: true,
     rollingMeanWindow: 1,
     x: {
       numTicks: 11,
@@ -30,6 +31,7 @@ var defaultSettings = [
   },
   {
     id: "chart-2",
+    onlyRelevantTooltipKeys: false,
     rollingMeanWindow: 1,
     x: {
       numTicks: 11,
@@ -338,8 +340,20 @@ function createChartView() {
         var translateX = focusX + margin.left;
         var translateY = focusY + margin.right;
         $tooltip.css("transform", "translate(" + translateX + "px," + translateY + "px)");
-        // TODO show only relevant keys
-        var newText = JSON.stringify(focusData, undefined, 1);
+
+        // optionally show only the relevant keys for the tooltip
+        var jsonData;
+        if (chartData.onlyRelevantTooltipKeys) {
+          jsonData = {};
+          var relevantTooltipKeys = _.pluck(yMaps, "key").concat([chartData.x.key]);
+          _.forEach(relevantTooltipKeys, function(k) {
+            jsonData[k] = focusData[k];
+          });
+        } else {
+          jsonData = focusData;
+        }
+
+        var newText = JSON.stringify(jsonData, undefined, 1);
         if ($tooltip.text() !== newText) {
           $tooltip.text(newText);
         }
