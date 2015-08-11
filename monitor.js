@@ -36,11 +36,6 @@ var defaultSettings = [
         keys: ["valid_cost"],
         scale: "cost",
         color: "category10"
-      },
-      {
-        key: "train_cost",
-        scale: "cost",
-        color: "category10"
       }
     ]
   },
